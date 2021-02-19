@@ -1,46 +1,22 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow } = require("electron");
 const shell = require("electron").shell;
+const path = require("path");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 730,
+    minHeight: 550,
+    minWidth: 750,
+    icon: path.join(__dirname, "assets/images/icon.ico"),
     webPreferences: {
       nodeIntegration: true,
     },
   });
 
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
   win.loadFile("src/index.html");
-
-  let menu = Menu.buildFromTemplate([
-    {
-      label: "Nassim",
-      submenu: [
-        { label: "About" },
-        {
-          label: "Github",
-          click() {
-            shell.openExternal("https://github.com/nassimessaidi");
-          },
-        },
-        {
-          label: "Twitter",
-          click() {
-            shell.openExternal("https://twitter.com/nassimessaidi");
-          },
-        },
-        { type: "separator" },
-        {
-          label: "Exit",
-          click() {
-            app.quit();
-          },
-        },
-      ],
-    },
-  ]);
-  Menu.setApplicationMenu(menu);
+  win.setMenu(null);
 }
 
 app.whenReady().then(createWindow);

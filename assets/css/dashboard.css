@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Inter-regular";
+  src: url("../fonts/static/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-bold";
+  src: url("../fonts/static/Inter-Bold.ttf") format("truetype");
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter-regular" !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.dashboard {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#myChart {
+  font-family: "Inter-regular" !important;
+  width: 100%;
+  object-fit: contain;
+}
+
+.back {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  object-fit: contain;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.back:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.back img {
+  width: 100%;
+}
